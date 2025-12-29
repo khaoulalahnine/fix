@@ -1,0 +1,145 @@
+.auth-page {
+  display: flex;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+/* LEFT FORM */
+.auth-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 40px;
+  background: #fff;
+}
+
+.auth-left h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-form input,
+.auth-form select {
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.auth-form input:focus,
+.auth-form select:focus {
+  border-color: #df4710;
+  box-shadow: 0 4px 15px rgba(243, 141, 104, 0.3);
+}
+
+.auth-form button {
+  padding: 14px 0;
+  border: none;
+  border-radius: 50px;
+  background: #ea4205;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.auth-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(243,141,104,0.25);
+}
+
+.role-selector {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.role-selector button {
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 1px solid #f84b0c;
+  background: #fff;
+  color: #eb3f01;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.role-selector button.active-role {
+  background: #ef5016;
+  color: #fff;
+}
+
+.toggle-form {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.toggle-form span {
+  color: #eb4c13;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* RIGHT SIDE IMAGE */
+.auth-right {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-right-overlay {
+  background:#eb4c13 ;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 20px;
+  max-width: 400px;
+  animation: fadeIn 1s ease forwards;
+}
+
+.auth-right-overlay h2 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.auth-right-overlay p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .auth-page { flex-direction: column; }
+  .auth-left, .auth-right { flex: 1; border-radius: 0; }
+  .auth-right-overlay { max-width: 90%; }
+}
+
+@media (max-width: 480px) {
+  .auth-left h3 { font-size: 1.5rem; }
+  .auth-right-overlay h2 { font-size: 1.7rem; }
+  .auth-right-overlay p { font-size: 1rem; }
+}

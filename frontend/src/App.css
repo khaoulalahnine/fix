@@ -1,0 +1,204 @@
+/* Imports the Tailwind CSS framework if you want to use utility classes alongside your custom CSS */
+@import "tailwindcss";
+
+
+body {
+  margin: 0;
+}
+:root {
+  --blue: #0033ff;
+  --dark: #1a1a1a;
+  --transition: 0.3s ease;
+}
+
+/* MAIN */
+.advanced-nav {
+  position: sticky;
+  top: 14px;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 14px;
+  padding: 0.6rem 1.8rem;
+
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* LEFT */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  height: 32px;
+}
+
+.brand-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--dark);
+}
+
+/* CENTER */
+.nav-center {
+  display: flex;
+  gap: 26px;
+  list-style: none;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--dark);
+}
+
+.underline {
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--blue);
+  transition: var(--transition);
+}
+
+.nav-item:hover .underline {
+  width: 100%;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  min-width: 180px;
+
+  background: white;
+  border-radius: 12px;
+  padding: 8px 0;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: var(--transition);
+}
+
+.nav-item:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  padding: 10px 18px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #f5f7ff;
+  color: var(--blue);
+}
+
+/* RIGHT */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 50px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  width: 90px;
+  font-size: 0.85rem;
+  background: transparent;
+}
+
+.login-btn {
+  padding: 8px 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 50px;
+  border: none;
+  background: var(--blue);
+  color: white;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background: #0026c2;
+}
+
+/* MOBILE */
+.mobile-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 968px) {
+  .nav-center {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: white;
+    border-radius: 16px;
+    padding: 14px 0;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    display: none;
+  }
+
+  .nav-center.mobile-open {
+    display: flex;
+  }
+
+  .nav-item {
+    padding: 12px 22px;
+  }
+
+  .dropdown {
+    position: static;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    padding-left: 10px;
+  }
+
+  .search-box {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+}

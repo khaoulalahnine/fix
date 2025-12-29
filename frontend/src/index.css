@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap');
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* animations custom */
+@layer utilities {
+  /* your custom utilities */
+}
